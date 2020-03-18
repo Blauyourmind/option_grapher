@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Blauyourmind/option_grapher.git/static/css/main.0bba520d.chunk.css",
+    "main.js": "/Blauyourmind/option_grapher.git/static/js/main.2e7ab922.chunk.js",
+    "main.js.map": "/Blauyourmind/option_grapher.git/static/js/main.2e7ab922.chunk.js.map",
+    "runtime-main.js": "/Blauyourmind/option_grapher.git/static/js/runtime-main.c1c67afc.js",
+    "runtime-main.js.map": "/Blauyourmind/option_grapher.git/static/js/runtime-main.c1c67afc.js.map",
+    "static/js/2.812da94e.chunk.js": "/Blauyourmind/option_grapher.git/static/js/2.812da94e.chunk.js",
+    "static/js/2.812da94e.chunk.js.map": "/Blauyourmind/option_grapher.git/static/js/2.812da94e.chunk.js.map",
+    "index.html": "/Blauyourmind/option_grapher.git/index.html",
+    "precache-manifest.aee2d744a02f53781d8f8ead1842aa02.js": "/Blauyourmind/option_grapher.git/precache-manifest.aee2d744a02f53781d8f8ead1842aa02.js",
+    "service-worker.js": "/Blauyourmind/option_grapher.git/service-worker.js",
+    "static/css/main.0bba520d.chunk.css.map": "/Blauyourmind/option_grapher.git/static/css/main.0bba520d.chunk.css.map",
+    "static/js/2.812da94e.chunk.js.LICENSE.txt": "/Blauyourmind/option_grapher.git/static/js/2.812da94e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c1c67afc.js",
+    "static/js/2.812da94e.chunk.js",
+    "static/css/main.0bba520d.chunk.css",
+    "static/js/main.2e7ab922.chunk.js"
+  ]
+}
