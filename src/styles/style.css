@@ -1,0 +1,42 @@
+#gen_chart, #add_option{
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 30px;
+    width: 90px;
+    height: 40px;
+    border: black 2px solid;
+    border-radius: 5px;
+    outline: none;
+}
+
+#gen_chart{
+    display: block;
+    margin: 20px auto;
+}
+#gen_chart:hover, #add_option:hover{
+    color: white;
+    background-color: black
+}
+.option_info{
+    font-size: 18px;
+    display:flex;
+    justify-content: space-evenly;
+    width: 650px;
+    border: solid black 2px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 15px;
+}
+.option_type, .option_strategy{
+    display:flex;
+}
+.options{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.chart-div{
+    position: relative;
+    margin-left: 15%;
+}
