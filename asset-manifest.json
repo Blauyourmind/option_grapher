@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Blauyourmind/option_grapher/static/css/main.0bba520d.chunk.css",
-    "main.js": "/Blauyourmind/option_grapher/static/js/main.361bbb60.chunk.js",
-    "main.js.map": "/Blauyourmind/option_grapher/static/js/main.361bbb60.chunk.js.map",
-    "runtime-main.js": "/Blauyourmind/option_grapher/static/js/runtime-main.c8483741.js",
-    "runtime-main.js.map": "/Blauyourmind/option_grapher/static/js/runtime-main.c8483741.js.map",
-    "static/js/2.a2933cbb.chunk.js": "/Blauyourmind/option_grapher/static/js/2.a2933cbb.chunk.js",
-    "static/js/2.a2933cbb.chunk.js.map": "/Blauyourmind/option_grapher/static/js/2.a2933cbb.chunk.js.map",
-    "index.html": "/Blauyourmind/option_grapher/index.html",
-    "precache-manifest.40a28f93da7d1cea324e0f2e1063ae4c.js": "/Blauyourmind/option_grapher/precache-manifest.40a28f93da7d1cea324e0f2e1063ae4c.js",
-    "service-worker.js": "/Blauyourmind/option_grapher/service-worker.js",
-    "static/css/main.0bba520d.chunk.css.map": "/Blauyourmind/option_grapher/static/css/main.0bba520d.chunk.css.map",
-    "static/js/2.a2933cbb.chunk.js.LICENSE.txt": "/Blauyourmind/option_grapher/static/js/2.a2933cbb.chunk.js.LICENSE.txt"
+    "main.css": "/option_grapher/static/css/main.0bba520d.chunk.css",
+    "main.js": "/option_grapher/static/js/main.a46d79fe.chunk.js",
+    "main.js.map": "/option_grapher/static/js/main.a46d79fe.chunk.js.map",
+    "runtime-main.js": "/option_grapher/static/js/runtime-main.7d25dd9a.js",
+    "runtime-main.js.map": "/option_grapher/static/js/runtime-main.7d25dd9a.js.map",
+    "static/js/2.7271552d.chunk.js": "/option_grapher/static/js/2.7271552d.chunk.js",
+    "static/js/2.7271552d.chunk.js.map": "/option_grapher/static/js/2.7271552d.chunk.js.map",
+    "index.html": "/option_grapher/index.html",
+    "precache-manifest.345bd77ed0d6d26baa7c7af6b2637150.js": "/option_grapher/precache-manifest.345bd77ed0d6d26baa7c7af6b2637150.js",
+    "service-worker.js": "/option_grapher/service-worker.js",
+    "static/css/main.0bba520d.chunk.css.map": "/option_grapher/static/css/main.0bba520d.chunk.css.map",
+    "static/js/2.7271552d.chunk.js.LICENSE.txt": "/option_grapher/static/js/2.7271552d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c8483741.js",
-    "static/js/2.a2933cbb.chunk.js",
+    "static/js/runtime-main.7d25dd9a.js",
+    "static/js/2.7271552d.chunk.js",
     "static/css/main.0bba520d.chunk.css",
-    "static/js/main.361bbb60.chunk.js"
+    "static/js/main.a46d79fe.chunk.js"
   ]
 }
