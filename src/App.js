@@ -31,10 +31,7 @@ class App extends React.Component {
                       zeroLineWidth: 3,
                       zeroLineColor: "#2C292E",
                   },
-                  ticks:{
-                    min:-150,
-                    max: 150
-                  }
+                  
           
               }]
           },
@@ -55,7 +52,10 @@ class App extends React.Component {
   }
 
   
-  
+  // ticks:{
+  //   min:-400,
+  //   max: 400
+  // }
 
   handleAddOption = (e)=>{
     e.preventDefault()
@@ -103,12 +103,13 @@ class App extends React.Component {
         method: 'POST',
         headers:{
             "Content-type": "application/json",
+            "x-powered-by": "CORS Anywhere",
 
         },
         body: JSON.stringify(data)
     }
   
-    await fetch("http://ec2-3-91-62-146.compute-1.amazonaws.com/~michaelblau/Options_Grapher/options.php",headers).then((res)=>{
+    await fetch("https://cors-anywhere.herokuapp.com/http://ec2-3-91-62-146.compute-1.amazonaws.com/~michaelblau/Options_Grapher/options.php",headers).then((res)=>{
         return res.json()
     }).then((data)=>{
       console.log(data['res'])
@@ -135,6 +136,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
+          <h1>Option Payoff Grapher</h1>
           <div className='options'>
               <button id='add_option' onClick={this.handleAddOption}>Add Option</button>
               <div id='options_display'>
