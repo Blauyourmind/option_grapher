@@ -103,16 +103,21 @@ class App extends React.Component {
         method: 'POST',
         headers:{
             "Content-type": "application/json",
-            "x-powered-by": "CORS Anywhere",
+            "x-powered-by": "CORS Anywhere"
+            
 
         },
         body: JSON.stringify(data)
     }
-  
-    await fetch("https://cors-anywhere.herokuapp.com/http://ec2-3-91-62-146.compute-1.amazonaws.com/~michaelblau/Options_Grapher/options.php",headers).then((res)=>{
+    //"x-powered-by": "CORS Anywhere",
+  console.log(headers.body)
+
+  //https://6rswc176r1.execute-api.us-east-1.amazonaws.com/default/generateOptionPayoff
+  //https://cors-anywhere.herokuapp.com/http://ec2-3-91-62-146.compute-1.amazonaws.com/~michaelblau/Options_Grapher/options.php
+    await fetch("https://cors-anywhere.herokuapp.com/https://6rswc176r1.execute-api.us-east-1.amazonaws.com/default/generateOptionPayoff",headers).then((res)=>{
         return res.json()
     }).then((data)=>{
-      console.log(data['res'])
+      console.log(data)
 
       this.setState({chart_data: {
         labels: Array.from(Array(400).keys()),
