@@ -48,7 +48,7 @@ class Email extends React.Component{
             <div className='email-form'>
                 <h2>Share Your Strategy With A Friend</h2>
                 <form>
-                    <input type='email' value={this.state.email} onChange={this.handleChangeEmail} required/>
+                    <input id='email-input' type='email' value={this.state.email} onChange={this.handleChangeEmail} required/>
                     <button onClick={this.handleSubmitEmail}>Send Email</button>
                 </form>
             </div>
