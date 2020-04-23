@@ -1,7 +1,10 @@
 import React from 'react';
 import './styles/style.css'
 import Option from './components/Option'
+import Email from './components/Email'
 import {Line} from 'react-chartjs-2';
+
+
 
 class App extends React.Component {
 
@@ -64,7 +67,7 @@ class App extends React.Component {
       return option
     })
     let id = Date.now()
-    updated_options.push(<Option id={id} key={id} handleUpdateOption={this.handleUpdateOption}/>)
+    updated_options.push(<Option id={id} key={id} handleUpdateOption={this.handleUpdateOption} handleRemoveOption={this.handleRemoveOption}/>)
 
 
     let updated_options_data = this.state.optionsData
@@ -87,10 +90,20 @@ class App extends React.Component {
     this.setState({optionsData: updatedOptions})
   }
 
+  handleRemoveOption = (id)=>{
+    const updatedOptions = this.state.optionsData.filter((option) =>{
+      if (option.id !== id){
+          return option
+      }
+    });
+    this.setState({optionsData: updatedOptions})
+  }
+
   handleGenChart = (e)=>{
     e.preventDefault()
     this.fetchPayoff()
   }
+
 
 
   async fetchPayoff(){
@@ -135,7 +148,23 @@ class App extends React.Component {
 }
 
 
-  
+handleRemoveOption = (id)=>{
+  // remove option data
+  const updatedOptionsData = this.state.optionsData.filter((option) =>{
+    if (option.id !== id){
+        return option
+    }
+  });
+
+  // remove option from display list
+  const updatedOptions = this.state.options.filter((option) =>{
+    if (option.props.id !== id){
+        return option
+    }
+  });
+
+  this.setState({optionsData: updatedOptionsData, options: updatedOptions})
+}
 
 
   render(){
@@ -151,11 +180,13 @@ class App extends React.Component {
           
           <button id='gen_chart' onClick={this.handleGenChart}>Generate Chart</button>
 
-          <div className='chart-div'>
-            <div>
+          <div id='chart-div'>
+            <div id="chart">
               <Line data={this.state.chart_data} width={900} height={550}options={this.state.chart_options}/>
             </div>
           </div>
+
+          <Email/>
 
       </div>
     );

@@ -1,4 +1,4 @@
-h1{
+h1,h2{
     text-align: center;
 }
 #gen_chart, #add_option{
@@ -24,7 +24,7 @@ h1{
     font-size: 18px;
     display:flex;
     justify-content: space-evenly;
-    width: 650px;
+    width: 750px;
     border: solid black 2px;
     border-radius: 5px;
     padding: 5px;
@@ -39,7 +39,37 @@ h1{
     align-items: center;
 }
 
-.chart-div{
-    position: relative;
-    margin-left: 15%;
+#chart-div{
+    width: 100%;
+}
+#chart-div div{
+    width: 63%;
+    margin: 0 auto;
+}
+
+.delete{
+    border: 0.5px solid red;
+    color: red;
+    border-radius: 5px;
+}
+.delete:hover{
+    border: 0.5px solid white;
+    color: white;
+    background-color: red;
+}
+
+.email-form{
+    width: 100%;
+    margin-bottom: 50px;
+}
+.email-form form{
+    width: 200px;
+    margin: 0 auto;
+}
+.email-form input {
+    height: 20px;
+    width: 120px;
+    border: 2px solid navy;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
