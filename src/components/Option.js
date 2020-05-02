@@ -16,6 +16,9 @@ class Option extends React.Component{
 
     }
     componentDidMount(){
+        // pass option data up to parent 
+        this.props.handleUpdateOption(this.state.id, this.state)
+
         // set component border color 
         this.setCompColor(this.state.strategy)
     }
@@ -41,11 +44,25 @@ class Option extends React.Component{
     }
 
     handleChangeStrike=(e)=>{
-        this.setState({strike: Math.trunc(parseInt(e.target.value))}) // save strike in state
+        // if input is not a NaN value, then save it in state
+        // otherwise replace it with an empty string
+        
+        let value = ""
+        if(isNaN(parseInt(e.target.value)) === false){
+            value = Math.trunc(parseInt(e.target.value)) 
+        }
+        this.setState({strike: value}) // save strike in state
     }
 
     handleChangePrice=(e)=>{
-        this.setState({price: Math.trunc(parseInt(e.target.value))}) // save price in state
+        // if input is not a NaN value, then save it in state
+        // otherwise replace it with an empty string
+
+        let value = ""
+        if(isNaN(parseInt(e.target.value)) === false){
+            value = Math.trunc(parseInt(e.target.value)) 
+        }
+        this.setState({price: value}) // save price in state
     }
 
     handleRemoveOption=(e)=>{
@@ -93,8 +110,8 @@ class Option extends React.Component{
                             <label>Buy<input type="radio"   checked={this.state.strategy === "buy"} value="buy" onChange={this.handleChangeStrategy}/></label>
                     </div>
 
-                    <label>Strike: <input step="1" type='number' name='strike' value={this.state.strike} onChange={this.handleChangeStrike}/></label>
-                    <label>Price: <input step="1" type='number' name='price'  value={this.state.price} onChange={this.handleChangePrice}/></label>
+                    <label>Strike: <input step="1" type='number' max="400" name='strike' value={this.state.strike} onChange={this.handleChangeStrike}/></label>
+                    <label>Price: <input step="1" type='number' name='price' min="0" value={this.state.price} onChange={this.handleChangePrice}/></label>
                     <button className='delete' onClick={this.handleRemoveOption}>Delete</button>
                 </form>
             )
@@ -114,8 +131,8 @@ class Option extends React.Component{
 Option.defaultProps = {
     style: 'put',
     strategy: 'sell',
-    strike: '0',
-    price: '0'
+    strike: 0,
+    price: 0
 }
 
 export default Option;
