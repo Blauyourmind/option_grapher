@@ -47,9 +47,14 @@ class Option extends React.Component{
         // if input is not a NaN value, then save it in state
         // otherwise replace it with an empty string
         
-        let value = ""
-        if(isNaN(parseInt(e.target.value)) === false){
-            value = Math.trunc(parseInt(e.target.value)) 
+        let value = Math.trunc(parseInt(e.target.value)) 
+        if(isNaN(value) === true){
+            value = ""
+        }
+        // check that value is between 0 and 400
+        else if(value >= 400 || value < 0){
+            alert("Please enter values between 0 and 399")
+            value = ""
         }
         this.setState({strike: value}) // save strike in state
     }

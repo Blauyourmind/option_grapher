@@ -76,3 +76,10 @@ h1,h2{
 #email-input{
     width: 150px;
 }
+.plot-section{
+    display: flex;
+    justify-content: center;
+}
+.plot{
+    border: 2px solid green;  
+}

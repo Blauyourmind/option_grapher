@@ -1,8 +1,7 @@
 import React from 'react';
 import './styles/style.css'
 import Option from './components/Option'
-import Email from './components/Email'
-import {Line} from 'react-chartjs-2';
+import Plot from 'react-plotly.js';
 
 
 
@@ -15,33 +14,6 @@ class App extends React.Component {
         options: [],
         optionsData:[],
         payoff: [],
-        chart_data: {
-          labels: Array.from(Array(400).keys()),
-          datasets: [{
-          label: "Option Strategy Payoff Chart",
-          backgroundColor: 'rgba(255, 255, 255,1.0)',
-          borderColor: 'rgb(0, 135, 34)',
-          pointBackgroundColor: 'rgb(0, 135, 34)',
-          data: [],
-          }]
-       },
-        chart_options:{
-            maintainAspectRatio: false,
-            responsive:false,
-            tooltips:{mode: 'nearest'},
-            scales: {
-              yAxes: [{
-                  gridLines: {
-                      zeroLineWidth: 3,
-                      zeroLineColor: "#2C292E",
-                  },
-                  ticks:{
-                    suggestedMin: 10,
-                    suggestedMax: 10
-                  }
-              }]
-           }
-        }
     }
   }
 
@@ -100,24 +72,18 @@ class App extends React.Component {
         },
         body: JSON.stringify(data)
     }
+  
     await fetch("https://cors-anywhere.herokuapp.com/https://6rswc176r1.execute-api.us-east-1.amazonaws.com/default/generateOptionPayoff",headers).then((res)=>{
         return res.json()
     }).then((data)=>{
-      
       // get response data vector for option strategy and set it to teh chartjs data field 
-      this.setState({chart_data: {
-        labels: Array.from(Array(400).keys()),
-        datasets: [{
-          label: "Option Strategy Payoff Chart",
-          backgroundColor: 'rgba(255, 255, 255,1.0)',
-          borderColor: 'rgb(0, 135, 34)',
-          fill: 'rgb(0, 135, 34)',
-          pointBackgroundColor: 'rgb(0, 135, 34)',
-          data: data['res'], // set data
-        }]
-     }})
+      console.log(data['res'])
+      this.setState({payoff: data['res']})
 
-    }).catch((err)=>{console.log(err)})
+    }).catch((err)=>{
+      console.log(err)
+      alert("An Error Occured Generating Option Payoffs!")
+    })
 }
 
 
@@ -126,6 +92,8 @@ handleRemoveOption = (id)=>{
   const updatedOptionsData = this.state.optionsData.filter((option) =>{
     if (option.id !== id){
         return option
+    }else{
+      return 0
     }
   });
 
@@ -133,6 +101,8 @@ handleRemoveOption = (id)=>{
   const updatedOptions = this.state.options.filter((option) =>{
     if (option.props.id !== id){
         return option
+    }else{
+      return 0
     }
   });
 
@@ -153,13 +123,22 @@ handleRemoveOption = (id)=>{
           
           <button id='gen_chart' onClick={this.handleGenChart}>Generate Chart</button>
 
-          <div id='chart-div'>
-            <div id="chart">
-              <Line data={this.state.chart_data} width={900} height={550}options={this.state.chart_options}/>
-            </div>
+          <div className='plot-section'>
+            <Plot
+              id = 'chart'
+              className = "plot"
+              data={[
+                {
+                  x: Array.from(Array(400).keys()),
+                  y: this.state.payoff,
+                  type: 'scatter',
+                  mode: 'lines+markers',
+                  marker: {color: 'green'},
+                }]}
+              layout={ {width: 1100, height: 600, title: 'Option Payoff Chart'} }
+            />
           </div>
-
-          <Email/>
+  
 
       </div>
     );
