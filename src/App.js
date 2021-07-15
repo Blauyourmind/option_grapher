@@ -68,12 +68,11 @@ class App extends React.Component {
         method: 'POST',
         headers:{
             "Content-type": "application/json",
-            "x-powered-by": "CORS Anywhere"
         },
         body: JSON.stringify(data)
     }
   
-    await fetch("https://cors-anywhere.herokuapp.com/https://6rswc176r1.execute-api.us-east-1.amazonaws.com/default/generateOptionPayoff",headers).then((res)=>{
+    await fetch("https://6rswc176r1.execute-api.us-east-1.amazonaws.com/default/generateOptionPayoff",headers).then((res)=>{
         return res.json()
     }).then((data)=>{
       // get response data vector for option strategy and set it to teh chartjs data field 
